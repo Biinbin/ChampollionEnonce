@@ -36,5 +36,14 @@ public class ChampollionJUnitTest {
                          "L'enseignant doit maintenant avoir 30 heures prévues pour l'UE 'uml'");		
 		
 	}
+        
+        @Test
+        public void testHeuresPrevues(){
+             double equivalentTD = 0;
+        for (ServicePrevu s : untel.SP) {
+            equivalentTD = s.getVolumeCM() * 1.5 + s.getVolumeTD() + s.getVolumeTP() * 0.75;
+        }
+        assertEquals(equivalentTD, untel.heuresPrevues());
+        }
 	
 }
